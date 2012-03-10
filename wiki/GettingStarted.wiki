@@ -2,7 +2,14 @@
 
 ==Dependencies==
 
-PoHessian depends on [http://pocoproject.org Poco], here is its [http://pocoproject.org/download/index.html download].
+PoHessian depends on the modules Foundation and Net from [http://pocoproject.org Poco].
+
+Using Debian you can get it using:
+{{{
+$ sudo apt-get install libpoco-dev libpocofoundation9 libpocofoundation9-dbg libpoconet9 libpoconet9-dbg
+}}}
+
+If you need to build it from source, here is its [http://pocoproject.org/download/index.html download] page. Read the [http://poco.svn.sourceforge.net/viewvc/poco/poco/branches/poco-1.4.3/README Poco README].
 
 ==Get the code==
 
