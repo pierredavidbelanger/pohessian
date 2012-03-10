@@ -18,3 +18,16 @@ For now I recommend using the bleeding edge trunk PoHessian.
 You can get the PoHessian code using the [http://code.google.com/p/pohessian/source/checkout instructions here].
 
 ==Compile==
+
+Generally you will only have to invoke [http://www.gnu.org/software/make/ GNU Make] in the pohessian directory.
+
+{{{
+$ cd pohessian/pohessian
+$ make
+}}}
+
+This will output:
+  * build/OS/ARCH/debug/shared/libpohessian.EXT
+  * build/OS/ARCH/debug/static/libpohessian.EXT
+  * build/OS/ARCH/release/shared/libpohessian.EXT
+  * build/OS/ARCH/release/static/libpohessian.EXT
