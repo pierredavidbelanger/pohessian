@@ -4,7 +4,7 @@
 
 PoHessian depends on the modules Foundation and Net from [http://pocoproject.org Poco].
 
-Using Debian you can get it using:
+Using Debian, for example, you can get it using:
 {{{
 $ sudo apt-get install libpoco-dev libpocofoundation9 libpocofoundation9-dbg libpoconet9 libpoconet9-dbg
 }}}
