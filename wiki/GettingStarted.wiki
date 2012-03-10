@@ -13,4 +13,8 @@ If you need to build it from source, here is its [http://pocoproject.org/downloa
 
 ==Get the code==
 
+For now I recommend using the bleeding edge trunk PoHessian.
+
+You can get the PoHessian code using the [http://code.google.com/p/pohessian/source/checkout instructions here].
+
 ==Compile==
