@@ -1,8 +1,9 @@
 #summary Getting Started page.
 
-=Dependencies=
+==Dependencies==
 
-=Get the code=
+PoHessian depends on [http://pocoproject.org Poco], here is its [http://pocoproject.org/download/index.html download].
 
-=Compile= 
+==Get the code==
 
+==Compile==
