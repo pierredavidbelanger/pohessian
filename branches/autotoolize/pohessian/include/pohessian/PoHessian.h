@@ -20,8 +20,8 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
-#ifndef PoHessian_PoHessian_INCLUDED
-#define	PoHessian_PoHessian_INCLUDED
+#ifndef pohessian_PoHessian_INCLUDED
+#define	pohessian_PoHessian_INCLUDED
 
 #ifdef _WIN32
     #ifndef PoHessian_STATIC

@@ -22,6 +22,8 @@
 
 #include "pohessian/Hessian1StreamReader.h"
 
+#include "conf.h"
+
 #include <string>
 #include <vector>
 #include <istream>

@@ -22,6 +22,8 @@
 
 #include "pohessian/HessianClient.h"
 
+#include "conf.h"
+
 #include <string>
 #include <vector>
 #include <iostream>

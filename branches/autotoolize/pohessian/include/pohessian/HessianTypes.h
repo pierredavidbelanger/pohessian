@@ -20,8 +20,8 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
-#ifndef PoHessian_HessianTypes_INCLUDED
-#define PoHessian_HessianTypes_INCLUDED
+#ifndef pohessian_HessianTypes_INCLUDED
+#define pohessian_HessianTypes_INCLUDED
 
 #include <string>
 #include <vector>

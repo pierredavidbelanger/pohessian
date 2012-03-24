@@ -22,6 +22,8 @@
 
 #include "pohessian/HessianTypes.h"
 
+#include "conf.h"
+
 #include <iostream>
 #include <typeinfo>
 

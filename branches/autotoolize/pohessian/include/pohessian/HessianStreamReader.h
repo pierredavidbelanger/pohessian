@@ -20,8 +20,8 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
-#ifndef PoHessian_HessianStreamReader_INCLUDED
-#define PoHessian_HessianStreamReader_INCLUDED
+#ifndef pohessian_HessianStreamReader_INCLUDED
+#define pohessian_HessianStreamReader_INCLUDED
 
 #include <istream>
 #include <vector>

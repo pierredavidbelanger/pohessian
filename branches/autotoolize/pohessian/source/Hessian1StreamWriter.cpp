@@ -22,6 +22,8 @@
 
 #include "pohessian/Hessian1StreamWriter.h"
 
+#include "conf.h"
+
 #include <string>
 #include <vector>
 #include <ostream>

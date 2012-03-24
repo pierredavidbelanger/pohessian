@@ -20,8 +20,8 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
-#ifndef PoHessian_HessianClient_INCLUDED
-#define PoHessian_HessianClient_INCLUDED
+#ifndef pohessian_HessianClient_INCLUDED
+#define pohessian_HessianClient_INCLUDED
 
 #include <string>
 #include <vector>

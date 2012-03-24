@@ -20,32 +20,11 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
-#ifndef pohessian_HessianStreamWriter_INCLUDED
-#define pohessian_HessianStreamWriter_INCLUDED
+#ifndef conf_INCLUDED
+#define conf_INCLUDED
 
-#include <ostream>
-#include <vector>
-
-#include "pohessian/PoHessian.h"
-#include "pohessian/HessianTypes.h"
-
-namespace PoHessian {
-
-    class PoHessian_API HessianStreamWriter {
-    public:
-        
-        virtual void writeValue(const ValuePtr& value) = 0;
-        virtual void writeCall(const CallPtr& call) = 0;
-        virtual void writeReply(const ReplyPtr& reply) = 0;
-        
-    protected:
-        
-        HessianStreamWriter(std::ostream& out);
-        
-        std::ostream& _out;
-        RefList _refs;
-    };
-
-}
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 
 #endif
