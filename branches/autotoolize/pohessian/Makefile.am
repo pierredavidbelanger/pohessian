@@ -18,13 +18,13 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-pkginclude_HEADERS = include/PoHessian/Hessian1StreamReader.h \
-    include/PoHessian/Hessian1StreamWriter.h \
-    include/PoHessian/HessianClient.h \
-    include/PoHessian/HessianStreamReader.h \
-    include/PoHessian/HessianStreamWriter.h \
-    include/PoHessian/HessianTypes.h \
-    include/PoHessian/PoHessian.h
+pkginclude_HEADERS = include/pohessian/Hessian1StreamReader.h \
+    include/pohessian/Hessian1StreamWriter.h \
+    include/pohessian/HessianClient.h \
+    include/pohessian/HessianStreamReader.h \
+    include/pohessian/HessianStreamWriter.h \
+    include/pohessian/HessianTypes.h \
+    include/pohessian/PoHessian.h
 
 lib_LTLIBRARIES = libpohessian.la
 
