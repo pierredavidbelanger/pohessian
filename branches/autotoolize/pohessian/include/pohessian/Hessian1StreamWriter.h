@@ -17,8 +17,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
-// Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
-//
 
 #ifndef pohessian_Hessian1StreamWriter_INCLUDED
 #define pohessian_Hessian1StreamWriter_INCLUDED

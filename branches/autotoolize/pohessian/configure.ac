@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]])
 
 AC_PREREQ([2.61])
-AC_INIT([PoHessian], [1.0])
+AC_INIT([PoHessian], [1.0], [pierredavidbelanger@gmail.com])
 
 AM_INIT_AUTOMAKE([-Wall])
 
