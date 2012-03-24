@@ -19,9 +19,9 @@ libpohessian_la_CPPFLAGS = -I$(top_srcdir)/include
 
 check_PROGRAMS = pohessiancheck
 
-pohessiancheck_SOURCES = test/hessian_tests.cpp \
-    test/hessian_tests.h \
-    test/main.cpp
+pohessiancheck_SOURCES = check/hessian_tests.cpp \
+    check/hessian_tests.h \
+    check/main.cpp
 pohessiancheck_CPPFLAGS = -I$(top_srcdir)/include
 pohessiancheck_LDADD = libpohessian.la
 
