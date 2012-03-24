@@ -2,7 +2,7 @@
 AC_PREREQ([2.61])
 AC_INIT([PoHessian], [1.0])
 
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([-Wall])
 
 LT_PREREQ([2.2])
 LT_INIT
@@ -10,6 +10,22 @@ LT_INIT
 AC_CONFIG_SRCDIR([include/PoHessian/PoHessian.h])
 
 AC_LANG([C++])
+
+AC_ARG_WITH([poco_foundation_include],
+            [AC_HELP_STRING([--with-poco-foundation-include=DIR],
+                            [Poco Foundation include directory])],
+            [CPPFLAGS="-I$withval $CPPFLAGS"])
+
+AC_ARG_WITH([poco_net_include],
+            [AC_HELP_STRING([--with-poco-net-include=DIR],
+                            [Poco Net include directory])],
+            [CPPFLAGS="-I$withval $CPPFLAGS"])
+
+AC_ARG_WITH([poco_lib],
+            [AC_HELP_STRING([--with-poco-lib=DIR],
+                            [Poco lib directory])],
+            [LDFLAGS="-L$withval -lPocoFoundation -lPocoNet $LDFLAGS"],
+            [LDFLAGS="-lPocoFoundation -lPocoNet $LDFLAGS"])
 
 AC_PROG_CXX
 AC_PROG_INSTALL
