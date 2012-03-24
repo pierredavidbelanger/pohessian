@@ -6,6 +6,15 @@ PoHessian (http://code.google.com/p/pohessian/) is a portable
 See the http://code.google.com/p/pohessian/wiki/GettingStarted page 
 to learn how to begin. Or read the included generic INSTALL file.
 
+In addition to the generic configure switchs, you can use:
+
+  --with-poco-foundation-include=DIR
+                          Poco Foundation include directory
+  --with-poco-net-include=DIR
+                          Poco Net include directory
+  --with-poco-lib=DIR     Poco lib directory
+
+
 For any kind of bug or request (for enhancement, documentation) 
 or general question that can benefit someone else, 
 please create an issue (http://code.google.com/p/pohessian/issues/entry). 
