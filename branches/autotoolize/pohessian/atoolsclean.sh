@@ -11,4 +11,4 @@ rm -rf autom4te.cache
 rm -f missing
 rm -f aclocal.m4
 rm -f install-sh
-rm pohessian-*.tar.gz
+rm -f pohessian-*.tar.gz
