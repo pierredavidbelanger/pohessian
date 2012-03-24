@@ -28,9 +28,9 @@
 
 #include "hessian_tests.h"
 
-#include "PoHessian/HessianTypes.h"
-#include "PoHessian/HessianClient.h"
-#include "PoHessian/Hessian1StreamWriter.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/HessianClient.h"
+#include "pohessian/Hessian1StreamWriter.h"
 
 #include "Poco/SharedPtr.h"
 
@@ -38,19 +38,20 @@ using namespace PoHessian;
 
 int main(int argc, char* argv[]) {
 
-    std::string server = "local";
+    std::string server = "remote";
     if (argc > 1)
         server = argv[1];
+    int ret = 0;
     if (server == "remote") {
         HessianClient client(HessianClient::HESSIAN_VERSION_1, Poco::URI("http://hessian.caucho.com/test/test2"));
-        hessian_test2(client);
+        ret += hessian_test2(client);
     } else {
         HessianClient client(HessianClient::HESSIAN_VERSION_1, Poco::URI("http://localhost:8181/test/test"));
-        hessian_test(client);
+        ret += hessian_test(client);
         HessianClient client2(HessianClient::HESSIAN_VERSION_1, Poco::URI("http://localhost:8181/test/test2"));
-        hessian_test2(client2);
+        ret += hessian_test2(client2);
         HessianClient client3(HessianClient::HESSIAN_VERSION_1, Poco::URI("tcp://localhost:9191"));
-        hessian_test(client3);
+        ret += hessian_test(client3);
     }
-    return 0;
+    return ret == 0 ? 0 : -1;
 }

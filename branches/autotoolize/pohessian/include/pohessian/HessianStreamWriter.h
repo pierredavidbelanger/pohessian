@@ -26,8 +26,8 @@
 #include <ostream>
 #include <vector>
 
-#include "PoHessian/PoHessian.h"
-#include "PoHessian/HessianTypes.h"
+#include "pohessian/PoHessian.h"
+#include "pohessian/HessianTypes.h"
 
 namespace PoHessian {
 

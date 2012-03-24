@@ -23,9 +23,9 @@
 #ifndef hessian_test_INCLUDED
 #define hessian_test_INCLUDED
 
-#include "PoHessian/HessianClient.h"
+#include "pohessian/HessianClient.h"
 
-void hessian_test(PoHessian::HessianClient& client);
-void hessian_test2(PoHessian::HessianClient& client);
+int hessian_test(PoHessian::HessianClient& client);
+int hessian_test2(PoHessian::HessianClient& client);
 
 #endif

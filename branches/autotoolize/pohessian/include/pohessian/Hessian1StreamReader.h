@@ -25,9 +25,9 @@
 
 #include <istream>
 
-#include "PoHessian/PoHessian.h"
-#include "PoHessian/HessianTypes.h"
-#include "PoHessian/HessianStreamReader.h"
+#include "pohessian/PoHessian.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/HessianStreamReader.h"
 
 namespace PoHessian {
 

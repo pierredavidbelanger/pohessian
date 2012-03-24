@@ -20,6 +20,8 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
+#include "hessian_tests.h"
+
 #include <string>
 #include <vector>
 #include <map>
@@ -29,10 +31,8 @@
 
 #include <math.h>
 
-#include "hessian_tests.h"
-
-#include "PoHessian/HessianTypes.h"
-#include "PoHessian/HessianClient.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/HessianClient.h"
 
 #include "Poco/Types.h"
 #include "Poco/Timespan.h"
@@ -1120,7 +1120,8 @@ typedef std::pair<std::string, hessian_test_function> test_list_entry;
 typedef std::vector<test_list_entry> test_list;
 typedef test_list::const_iterator test_list_iterator;
 
-static void execute(HessianClient& client, const test_list& tests) {
+static int execute(HessianClient& client, const test_list& tests) {
+    int ret = 0;
     for (test_list_iterator it = tests.begin(); it != tests.end(); it++) {
         test_list_entry test_entry = *it;
         std::string test_name = test_entry.first;
@@ -1131,26 +1132,33 @@ static void execute(HessianClient& client, const test_list& tests) {
             std::cout << "PASSED";
         } catch (HessianException& e) {
             std::cout << "FAILED: " << e.getMessage();
+            ret++;
         } catch (Exception& e) {
             std::cout << "FAILED: " << e.displayText();
+            ret++;
         } catch (std::exception& e) {
             std::cout << "FAILED: " << e.what();
+            ret++;
         }
         std::cout << std::endl;
     }
+    return ret;
 }
 
-void hessian_test(HessianClient& client) {
+int hessian_test(HessianClient& client) {
+    int ret = 0;
     test_list tests;
     tests.push_back(test_list_entry("nullCall", nullCall));
     tests.push_back(test_list_entry("hello", hello));
     tests.push_back(test_list_entry("subtract", subtract));
     tests.push_back(test_list_entry("echo", echo));
     tests.push_back(test_list_entry("fault", fault));
-    execute(client, tests);
+    ret += execute(client, tests);
+    return ret;
 }
 
-void hessian_test2(HessianClient& client) {
+int hessian_test2(HessianClient& client) {
+    int ret = 0;
     test_list tests;
     tests.push_back(test_list_entry("replyNull", replyNull));
     tests.push_back(test_list_entry("replyTrue", replyTrue));
@@ -1333,5 +1341,6 @@ void hessian_test2(HessianClient& client) {
     tests.push_back(test_list_entry("argObject_2a", argObject_2a));
     tests.push_back(test_list_entry("argObject_2b", argObject_2b));
     tests.push_back(test_list_entry("argObject_3", argObject_3));
-    execute(client, tests);
+    ret += execute(client, tests);
+    return ret;
 }

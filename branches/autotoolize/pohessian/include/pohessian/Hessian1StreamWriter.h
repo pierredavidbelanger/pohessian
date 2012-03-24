@@ -25,9 +25,9 @@
 
 #include <ostream>
 
-#include "PoHessian/PoHessian.h"
-#include "PoHessian/HessianTypes.h"
-#include "PoHessian/HessianStreamWriter.h"
+#include "pohessian/PoHessian.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/HessianStreamWriter.h"
 
 namespace PoHessian {
 

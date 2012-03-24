@@ -20,11 +20,11 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
+#include "pohessian/HessianStreamWriter.h"
+
 #include <ostream>
 
-#include "PoHessian/HessianStreamWriter.h"
-
-#include "PoHessian/HessianTypes.h"
+#include "pohessian/HessianTypes.h"
 
 namespace PoHessian {
 

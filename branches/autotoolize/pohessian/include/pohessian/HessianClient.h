@@ -27,8 +27,8 @@
 #include <vector>
 #include <ostream>
 
-#include "PoHessian/PoHessian.h"
-#include "PoHessian/HessianTypes.h"
+#include "pohessian/PoHessian.h"
+#include "pohessian/HessianTypes.h"
 
 #include "Poco/URI.h"
 

@@ -20,10 +20,10 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
+#include "pohessian/HessianTypes.h"
+
 #include <iostream>
 #include <typeinfo>
-
-#include "PoHessian/HessianTypes.h"
 
 #include "Poco/Types.h"
 #include "Poco/Timestamp.h"

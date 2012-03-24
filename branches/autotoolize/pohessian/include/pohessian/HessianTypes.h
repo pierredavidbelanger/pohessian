@@ -28,7 +28,7 @@
 #include <map>
 #include <algorithm>
 
-#include "PoHessian/PoHessian.h"
+#include "pohessian/PoHessian.h"
 
 #include "Poco/SharedPtr.h"
 #include "Poco/Types.h"

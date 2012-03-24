@@ -20,17 +20,17 @@
 // Contributor(s): Pierre-David Belanger <pierredavidbelanger@gmail.com>
 //
 
+#include "pohessian/HessianClient.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
 #include <sstream>
 #include <typeinfo>
 
-#include "PoHessian/HessianClient.h"
-
-#include "PoHessian/HessianTypes.h"
-#include "PoHessian/Hessian1StreamReader.h"
-#include "PoHessian/Hessian1StreamWriter.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/Hessian1StreamReader.h"
+#include "pohessian/Hessian1StreamWriter.h"
 
 #include "Poco/Exception.h"
 #include "Poco/String.h"
