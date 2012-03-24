@@ -31,7 +31,7 @@ AC_COPYRIGHT(PoHessian_COPYRIGHT)
 
 AH_TOP(/*PoHessian_COPYRIGHT*/)
 
-AC_CONFIG_SRCDIR([include/PoHessian/PoHessian.h])
+AC_CONFIG_SRCDIR([include/pohessian/PoHessian.h])
 
 AC_LANG([C++])
 
