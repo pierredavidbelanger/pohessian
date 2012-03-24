@@ -24,8 +24,8 @@ AC_ARG_WITH([poco_net_include],
 AC_ARG_WITH([poco_lib],
             [AC_HELP_STRING([--with-poco-lib=DIR],
                             [Poco lib directory])],
-            [LDFLAGS="-L$withval -lPocoFoundation -lPocoNet $LDFLAGS"],
-            [LDFLAGS="-lPocoFoundation -lPocoNet $LDFLAGS"])
+            [LDFLAGS="-L$withval $LDFLAGS"; LIBS="-lPocoFoundation -lPocoNet $LIBS"],
+            [LIBS="-lPocoFoundation -lPocoNet $LIBS"])
 
 AC_PROG_CXX
 AC_PROG_INSTALL
