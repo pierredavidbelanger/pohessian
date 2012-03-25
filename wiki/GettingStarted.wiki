@@ -27,6 +27,7 @@ $ cd pohessian-1.0
 {{{
 $ ./configure
 $ make
+$ make check #optional
 }}}
 
 This will output (on Darwin):
@@ -41,19 +42,13 @@ $ ls -p1 .libs/libpohessian.*
 .libs/libpohessian.lai
 }}}
 
-==Test (Optional)==
-
-{{{
-$ make check
-}}}
-
-==Install (Optional)==
+==Install==
 
 {{{
 $ sudo make install
 }}}
 
-==Uninstall (Optional)==
+==Uninstall==
 
 {{{
 $ sudo make uninstall
