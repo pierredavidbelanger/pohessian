@@ -19,4 +19,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ** NEWS **
 ==========
 
+* 2012-03-25: Autotoolized! But dropped temporarily support for building for w32 and wce.
+
 * 2012-03-09: Initial revision on code.google.com
