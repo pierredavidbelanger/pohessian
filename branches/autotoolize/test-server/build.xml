@@ -26,7 +26,7 @@
 <project name="test-java-server" default="all" basedir=".">
 
     <path id="classpath">
-        <fileset dir="../lib">
+        <fileset dir="lib">
             <include name="**/*"/>
         </fileset>
     </path>
