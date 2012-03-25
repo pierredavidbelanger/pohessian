@@ -6,28 +6,55 @@ PoHessian depends on the modules Foundation and Net from [http://pocoproject.org
 
 Using Debian, for example, you can get it using:
 {{{
-$ sudo apt-get install libpoco-dev libpocofoundation9 libpocofoundation9-dbg libpoconet9 libpoconet9-dbg
+$ sudo apt-get install libpoco-dev
 }}}
 
 If you need to build it from source, here is its [http://pocoproject.org/download/index.html download] page. Read the [http://poco.svn.sourceforge.net/viewvc/poco/poco/branches/poco-1.4.3/README Poco README].
 
 ==Get the code==
 
-For now I recommend using the bleeding edge trunk PoHessian.
+Download the [http://code.google.com/p/pohessian/downloads/detail?name=pohessian-1.0.tar.gz latest source package].
 
-You can get the PoHessian code using the [http://code.google.com/p/pohessian/source/checkout instructions here].
+==Unzip==
+
+{{{
+$ tar -xzf pohessian-1.0.tar.gz
+$ cd pohessian-1.0
+}}}
 
 ==Compile==
 
-Generally you will only have to invoke [http://www.gnu.org/software/make/ GNU Make] in the pohessian directory.
-
 {{{
-$ cd pohessian/pohessian
+$ ./configure
 $ make
 }}}
 
-This will output:
-  * build/OS/ARCH/debug/shared/libpohessian.EXT
-  * build/OS/ARCH/debug/static/libpohessian.EXT
-  * build/OS/ARCH/release/shared/libpohessian.EXT
-  * build/OS/ARCH/release/static/libpohessian.EXT
+This will output (on Darwin):
+
+{{{
+$ ls -p1 .libs/libpohessian.*
+.libs/libpohessian.0.0.0.dylib
+.libs/libpohessian.0.dylib
+.libs/libpohessian.a
+.libs/libpohessian.dylib
+.libs/libpohessian.la
+.libs/libpohessian.lai
+}}}
+
+==Test (Optional)==
+
+{{{
+$ make check
+}}}
+
+==Install (Optional)==
+
+{{{
+$ sudo make install
+}}}
+
+==Uninstall (Optional)==
+
+{{{
+$ sudo make uninstall
+}}}
