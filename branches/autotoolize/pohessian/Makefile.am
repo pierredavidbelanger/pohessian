@@ -47,3 +47,5 @@ pohessiancheck_CPPFLAGS = -I$(top_srcdir)/include
 pohessiancheck_LDADD = libpohessian.la
 
 TESTS = pohessiancheck
+
+EXTRA_DIST = build-ios.sh
