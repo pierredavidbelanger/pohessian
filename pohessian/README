@@ -1,0 +1,48 @@
+PoHessian
+Portable C++ Hessian Implementation
+
+Copyright (C) 2012  Pierre-David Belanger
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+** README **
+============
+
+PoHessian (http://code.google.com/p/pohessian/) is a portable 
+(thanks to Poco (http://pocoproject.org/)) C++ Hessian 
+(http://hessian.caucho.com/) implementation.
+
+See the http://code.google.com/p/pohessian/wiki/GettingStarted page 
+to learn how to begin. Or read the included generic INSTALL file.
+
+In addition to the generic configure switchs, you can use:
+
+  --with-sysroot=DIR      Compiler --sysroot option
+  --with-poco-foundation-include=DIR
+                          Poco Foundation include directory
+  --with-poco-net-include=DIR
+                          Poco Net include directory
+  --with-poco-lib=DIR     Poco lib directory
+  --with-arch=ARCH        Compiler -arch option
+
+For any kind of bug or request (for enhancement, documentation) 
+or general question that can benefit someone else, 
+please create an issue (http://code.google.com/p/pohessian/issues/entry). 
+For everything else contact me (pierredavidbelanger@gmail.com).
+
+PoHessian is released under the GNU GPL v3 
+(http://www.gnu.org/licenses/gpl.html). So you are free to 
+use/modify/redistribute this code, as long as it is for an open source project. 
+This way I give the free software a step ahead. If you plan to use 
+this code in a commercial application, please let me know.
