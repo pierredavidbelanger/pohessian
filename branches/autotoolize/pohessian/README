@@ -28,12 +28,13 @@ to learn how to begin. Or read the included generic INSTALL file.
 
 In addition to the generic configure switchs, you can use:
 
+  --with-sysroot=DIR      Compiler --sysroot option
   --with-poco-foundation-include=DIR
                           Poco Foundation include directory
   --with-poco-net-include=DIR
                           Poco Net include directory
   --with-poco-lib=DIR     Poco lib directory
-
+  --with-arch=ARCH        Compiler -arch option
 
 For any kind of bug or request (for enhancement, documentation) 
 or general question that can benefit someone else, 

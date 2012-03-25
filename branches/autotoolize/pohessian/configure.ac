@@ -35,6 +35,11 @@ AC_CONFIG_SRCDIR([include/pohessian/PoHessian.h])
 
 AC_LANG([C++])
 
+AC_ARG_WITH([sysroot],
+            [AC_HELP_STRING([--with-sysroot=DIR],
+                            [Compiler --sysroot option])],
+            [CPPFLAGS="--sysroot $withval $CPPFLAGS"])
+
 AC_ARG_WITH([poco_foundation_include],
             [AC_HELP_STRING([--with-poco-foundation-include=DIR],
                             [Poco Foundation include directory])],
@@ -50,6 +55,11 @@ AC_ARG_WITH([poco_lib],
                             [Poco lib directory])],
             [LDFLAGS="-L$withval $LDFLAGS"; LIBS="-lPocoFoundation -lPocoNet $LIBS"],
             [LIBS="-lPocoFoundation -lPocoNet $LIBS"])
+
+AC_ARG_WITH([arch],
+            [AC_HELP_STRING([--with-arch=ARCH],
+                            [Compiler -arch option])],
+            [CPPFLAGS="-arch $withval $CPPFLAGS"; CXXFLAGS="-arch $withval $CXXFLAGS"])
 
 AC_PROG_CXX
 AC_PROG_INSTALL
