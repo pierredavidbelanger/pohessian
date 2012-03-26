@@ -1,4 +1,5 @@
 #summary Getting Started page.
+#labels Featured,Phase-Deploy
 
 ==Dependencies==
 
