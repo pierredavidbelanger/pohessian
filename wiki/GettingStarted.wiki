@@ -56,7 +56,7 @@ $ sudo ldconfig
 
 ==Use==
 
-Here is a simple working bit of code that call the method `"String replyString_32()"` on the URL `"http://hessian.caucho.com/test/test2"`.
+Here is a simple working bit of code that call the method `[http://javadoc4.caucho.com/com/caucho/hessian/test/TestHessian2.html#replyString_32%28%29 String replyString_32()]` on the URL `[http://hessian.caucho.com/test/test2 http://hessian.caucho.com/test/test2]`.
 
 _main.cpp_
 {{{
