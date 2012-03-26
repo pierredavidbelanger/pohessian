@@ -78,16 +78,16 @@ int main()
 }
 }}}
 
-Compile the code:
+Compile the example:
 
 {{{
-$ g++ main.cpp -lpohessian -o test
+$ g++ main.cpp -lpohessian -o replyString_32
 }}}
 
-Execute the code:
+Execute the example:
 
 {{{
-$ ./test
+$ ./replyString_32
 01234567890123456789012345678901
 }}}
 
