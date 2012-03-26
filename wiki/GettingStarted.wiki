@@ -34,7 +34,7 @@ $ make
 $ make check #optional
 }}}
 
-This will create the libpohessian library (on Darwin):
+This will create the libpohessian library (here on Darwin):
 
 {{{
 $ ls -p1 .libs/libpohessian.*
