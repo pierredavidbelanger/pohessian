@@ -48,6 +48,32 @@ $ ls -p1 .libs/libpohessian.*
 $ sudo make install
 }}}
 
+==Use==
+
+Here is a simple working bit of code that call the method `String replyString_32()` on the URL `http://hessian.caucho.com/test/test2`.
+
+_main.cpp_
+{{{
+#include <iostream>
+#include "Poco/URI.h"
+#include "pohessian/HessianTypes.h"
+#include "pohessian/HessianClient.h"
+
+using namespace std;
+using namespace Poco;
+using namespace PoHessian;
+
+int main()
+{
+    URI uri("http://hessian.caucho.com/test/test2");
+    HessianClient client(HessianClient::HESSIAN_VERSION_1, uri);
+    cout << client.call("replyString_32")->getString() << endl;
+    return 0;
+}
+}}}
+
+Compile the code:
+
 ==Uninstall==
 
 {{{
