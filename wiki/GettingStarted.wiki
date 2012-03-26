@@ -48,9 +48,15 @@ $ ls -p1 .libs/libpohessian.*
 $ sudo make install
 }}}
 
+On Linux you probably will need to do a `ldconfig`:
+
+{{{
+$ sudo ldconfig
+}}}
+
 ==Use==
 
-Here is a simple working bit of code that call the method `String replyString_32()` on the URL `http://hessian.caucho.com/test/test2`.
+Here is a simple working bit of code that call the method `"String replyString_32()"` on the URL `"http://hessian.caucho.com/test/test2"`.
 
 _main.cpp_
 {{{
@@ -73,6 +79,17 @@ int main()
 }}}
 
 Compile the code:
+
+{{{
+$ g++ main.cpp -lpohessian -o test
+}}}
+
+Execute the code:
+
+{{{
+$ ./test
+01234567890123456789012345678901
+}}}
 
 ==Uninstall==
 
