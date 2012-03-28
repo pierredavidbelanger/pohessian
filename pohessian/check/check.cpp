@@ -18,30 +18,17 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#include "hessian_tests.h"
-
-#include <string>
-#include <vector>
-#include <map>
 #include <iostream>
 #include <sstream>
-#include <typeinfo>
+#include <string>
+#include <vector>
 
-#include <math.h>
-
+#include "Poco/URI.h"
 #include "pohessian/HessianTypes.h"
 #include "pohessian/HessianClient.h"
 
-#include "Poco/Types.h"
-#include "Poco/Timespan.h"
-#include "Poco/Exception.h"
-
+using namespace Poco;
 using namespace PoHessian;
-
-using Poco::Int32;
-using Poco::Int64;
-using Poco::Timestamp;
-using Poco::Exception;
 
 static void nullCall(HessianClient& client) {
     if (!client.call("nullCall")->isNull()) throw Exception("Should be NULL");
@@ -1118,7 +1105,7 @@ typedef std::pair<std::string, hessian_test_function> test_list_entry;
 typedef std::vector<test_list_entry> test_list;
 typedef test_list::const_iterator test_list_iterator;
 
-static int execute(HessianClient& client, const test_list& tests) {
+static int execute_tests(HessianClient& client, const test_list& tests) {
     int ret = 0;
     for (test_list_iterator it = tests.begin(); it != tests.end(); it++) {
         test_list_entry test_entry = *it;
@@ -1143,7 +1130,7 @@ static int execute(HessianClient& client, const test_list& tests) {
     return ret;
 }
 
-int hessian_test(HessianClient& client) {
+static int hessian_test_basic(HessianClient& client) {
     int ret = 0;
     test_list tests;
     tests.push_back(test_list_entry("nullCall", nullCall));
@@ -1151,11 +1138,11 @@ int hessian_test(HessianClient& client) {
     tests.push_back(test_list_entry("subtract", subtract));
     tests.push_back(test_list_entry("echo", echo));
     tests.push_back(test_list_entry("fault", fault));
-    ret += execute(client, tests);
+    ret += execute_tests(client, tests);
     return ret;
 }
 
-int hessian_test2(HessianClient& client) {
+static int hessian_test_test(HessianClient& client) {
     int ret = 0;
     test_list tests;
     tests.push_back(test_list_entry("replyNull", replyNull));
@@ -1339,6 +1326,18 @@ int hessian_test2(HessianClient& client) {
     tests.push_back(test_list_entry("argObject_2a", argObject_2a));
     tests.push_back(test_list_entry("argObject_2b", argObject_2b));
     tests.push_back(test_list_entry("argObject_3", argObject_3));
-    ret += execute(client, tests);
+    ret += execute_tests(client, tests);
     return ret;
+}
+
+int main(int argc, char* argv[]) {
+    int ret = 0;
+    
+    HessianClient client_basic(HessianClient::HESSIAN_VERSION_1, URI("http://hessian-test.appspot.com/basic"));
+    ret += hessian_test_basic(client_basic);
+    
+    HessianClient client_test(HessianClient::HESSIAN_VERSION_1, URI("http://hessian.caucho.com/test/test2"));
+    ret += hessian_test_test(client_test);
+    
+    return ret == 0 ? 0 : -1;
 }

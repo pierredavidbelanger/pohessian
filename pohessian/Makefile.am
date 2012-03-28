@@ -40,9 +40,7 @@ libpohessian_la_LDFLAGS = -version-info 0:0:0
 	
 check_PROGRAMS = pohessiancheck
 
-pohessiancheck_SOURCES = check/hessian_tests.cpp \
-    check/hessian_tests.h \
-    check/main.cpp
+pohessiancheck_SOURCES = check/check.cpp
 pohessiancheck_CPPFLAGS = -I$(top_srcdir)/include
 pohessiancheck_LDADD = libpohessian.la
 
