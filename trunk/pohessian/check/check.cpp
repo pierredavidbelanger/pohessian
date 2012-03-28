@@ -1137,7 +1137,8 @@ static int hessian_test_basic(HessianClient& client) {
     tests.push_back(test_list_entry("hello", hello));
     tests.push_back(test_list_entry("subtract", subtract));
     tests.push_back(test_list_entry("echo", echo));
-    tests.push_back(test_list_entry("fault", fault));
+    // BUG: Hessian Throwable serialization is not supported on Google App Engine
+    //tests.push_back(test_list_entry("fault", fault));
     ret += execute_tests(client, tests);
     return ret;
 }
