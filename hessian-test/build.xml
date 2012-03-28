@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="hessian-test" default="run">
+
+    <property name="appengine.sdk" location="../../lib/appengine-java-sdk-1.6.4"/>
+
+    <import file="${appengine.sdk}/config/user/ant-macros.xml"/>
+
+    <target name="run">
+        <dev_appserver war="rsrc"/>
+    </target>
+
+    <target name="update">
+        <appcfg action="update" war="rsrc"/>
+    </target>
+
+</project>
