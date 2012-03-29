@@ -38,12 +38,16 @@ libpohessian_la_SOURCES = source/Hessian1StreamReader.cpp \
 libpohessian_la_CPPFLAGS = -I$(top_srcdir)/include
 libpohessian_la_LDFLAGS = -version-info 0:0:0
 	
-check_PROGRAMS = pohessiancheck
+check_PROGRAMS = pohessiancheck pohessianexample
 
 pohessiancheck_SOURCES = check/check.cpp
 pohessiancheck_CPPFLAGS = -I$(top_srcdir)/include
 pohessiancheck_LDADD = libpohessian.la
 
-TESTS = pohessiancheck
+pohessianexample_SOURCES = check/example.cpp
+pohessianexample_CPPFLAGS = -I$(top_srcdir)/include
+pohessianexample_LDADD = libpohessian.la
+
+TESTS = pohessiancheck pohessianexample
 
 EXTRA_DIST = build-ios.sh
