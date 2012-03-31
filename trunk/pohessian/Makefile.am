@@ -36,7 +36,7 @@ libpohessian_la_SOURCES = source/Hessian1StreamReader.cpp \
     source/HessianType.cpp \
     source/conf.h
 libpohessian_la_CPPFLAGS = -I$(top_srcdir)/include
-libpohessian_la_LDFLAGS = -version-info 0:0:0
+libpohessian_la_LDFLAGS = -no-undefined -version-info 0:0:0
 	
 check_PROGRAMS = pohessiancheck pohessianexample
 

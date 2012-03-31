@@ -21,21 +21,16 @@
 #ifndef pohessian_PoHessian_INCLUDED
 #define	pohessian_PoHessian_INCLUDED
 
-#ifdef _WIN32
-    #ifndef PoHessian_STATIC
-        #ifdef PoHessian_EXPORTS
-                #define PoHessian_API __declspec(dllexport)
-        #else
-                #define PoHessian_API __declspec(dllimport)
-        #endif
-    #endif
-    #ifndef PoHessian_EXPORTS
-        #pragma comment(lib, "pohessian")
+#ifdef WIN32
+    #ifdef DLL_EXPORT
+        #define PoHessian_API __declspec(dllexport)
+    #else
+        #define PoHessian_API __declspec(dllimport)
     #endif
 #endif
 
 #ifndef PoHessian_API
-        #define PoHessian_API
+    #define PoHessian_API
 #endif
 
 #endif
