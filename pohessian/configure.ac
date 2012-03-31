@@ -20,12 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]])
 
 AC_PREREQ([2.61])
-AC_INIT([PoHessian], [1.0], [pierredavidbelanger@gmail.com])
+AC_INIT([PoHessian], [1.1], [pierredavidbelanger@gmail.com])
 
 AM_INIT_AUTOMAKE([-Wall])
 
 LT_PREREQ([2.2])
-LT_INIT
+LT_INIT([win32-dll])
 
 AC_COPYRIGHT(PoHessian_COPYRIGHT)
 
