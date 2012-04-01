@@ -11,3 +11,25 @@ PoHessian
 ValuePtr null1 = new Value();
 ValuePtr null2 = new Value(Value::TYPE_NULL);
 }}}
+
+==BOOLEAN==
+JAVA
+{{{
+Boolean bool1 = new Boolean(true);
+Boolean bool2 = new Boolean(false);
+}}}
+PoHessian
+{{{
+ValuePtr bool1 = new Value(true);
+ValuePtr bool2 = new Value(false);
+}}}
+
+==INT==
+JAVA
+{{{
+Integer int1 = new Integer(1337);
+}}}
+PoHessian
+{{{
+ValuePtr int1 = new Value(1337);
+}}}
