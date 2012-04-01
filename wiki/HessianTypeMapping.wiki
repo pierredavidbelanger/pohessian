@@ -69,3 +69,19 @@ if (double1->isDouble() && double1->getDouble() == 3.1416) {
     cout << "3.1416" << endl;
 }
 }}}
+
+==DATE==
+JAVA
+{{{
+Date date1 = new Date();
+}}}
+PoHessian
+{{{
+Poco::Timestamp now;
+ValuePtr date1 = new Value(now.epochTime() * 1000, Value::TYPE_DATE);
+ValuePtr date2 = new Value(now);
+if (date1->isDate() && date1->getDateAsTimestamp().epochTime() == now.epochTime()
+        && date2->isDate() && date2->getDateAsTimestamp().epochTime() == now.epochTime()) {
+    cout << Poco::DateTimeFormatter::format(now, "%Y-%m-%d %H:%M:%S") << endl;
+}
+}}}
