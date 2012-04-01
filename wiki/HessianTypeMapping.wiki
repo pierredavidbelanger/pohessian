@@ -43,6 +43,20 @@ if (int1->isInteger() && int1->getInteger() == 1337) {
 }
 }}}
 
+==LONG==
+JAVA
+{{{
+Long long1 = new Long(2147483648);
+}}}
+PoHessian
+{{{
+ValuePtr long1 = new Value((Poco::Int64)2147483648LL);
+ValuePtr long2 = new Value(2147483648LL, Value::TYPE_LONG);
+if (long1->isLong() && long1->getLong() == 2147483648LL && long2->isLong() && long2->getLong() == 2147483648LL) {
+    cout << "2147483648 && 2147483648" << endl;
+}
+}}}
+
 ==DOUBLE==
 JAVA
 {{{
