@@ -123,3 +123,18 @@ if (xml1->isXml() && xml1->getXml() == "<body/>"
     cout << "<body/>" << endl;
 }
 }}}
+
+==BINARY==
+JAVA
+{{{
+byte[] binary1 = "binary".getBytes();
+}}}
+PoHessian
+{{{
+ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
+ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
+if (binary1->isBinary() && binary1->getBinary() == "binary"
+        && binary2->isBinary() && binary2->getBinary() == "binary") {
+    cout << "binary" << endl;
+}
+}}}
