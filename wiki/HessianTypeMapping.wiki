@@ -2,15 +2,11 @@
 #labels Phase-Documentation
 
 ==NULL==
-
-===JAVA===
-
+JAVA
 {{{
 Object null1 = null;
 }}}
-
-===PoHessian===
-
+PoHessian
 {{{
 ValuePtr null1 = new Value();
 ValuePtr null2 = new Value(Value::TYPE_NULL);
