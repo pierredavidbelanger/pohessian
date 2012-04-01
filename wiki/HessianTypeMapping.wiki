@@ -33,3 +33,13 @@ PoHessian
 {{{
 ValuePtr int1 = new Value(1337);
 }}}
+
+==DOUBLE==
+JAVA
+{{{
+Double double1 = new Double(3.1416);
+}}}
+PoHessian
+{{{
+ValuePtr double1 = new Value(3.1416);
+}}}
