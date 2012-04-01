@@ -21,6 +21,8 @@
 #include <iostream>
 
 #include "Poco/URI.h"
+#include "Poco/Timestamp.h"
+#include "Poco/DateTimeFormatter.h"
 #include "pohessian/HessianTypes.h"
 #include "pohessian/HessianClient.h"
 
@@ -37,9 +39,88 @@ int main(int argc, char* argv[]) {
         cout << client.call("replyString_32")->getString() << endl;
     }
     
-    cout << "*" << endl << "* Value" << endl << "*" << endl;
+    cout << "*" << endl << "* Hessian Type Mapping" << endl << "*" << endl;
     {
-        HessianClient client(HessianClient::HESSIAN_VERSION_1, URI("http://hessian-test.appspot.com/basic"));
+        // NULL
+        // Object null1 = null;
+        ValuePtr null1 = new Value();
+        ValuePtr null2 = new Value(Value::TYPE_NULL);
+        if (null1->isNull() && null2->isNull()) {
+            cout << "null" << endl;
+        }
+     
+        // BOOLEAN
+        // Boolean bool1 = new Boolean(true);
+        // Boolean bool2 = new Boolean(false);
+        ValuePtr bool1 = new Value(true);
+        ValuePtr bool2 = new Value(false);
+        if (bool1->isBoolean() && bool1->getBoolean() && bool2->isBoolean() && !bool2->getBoolean()) {
+            cout << "true && false" << endl;
+        }
+        
+        // INT
+        // Integer int1 = new Integer(1337);
+        ValuePtr int1 = new Value(1337);
+        if (int1->isInteger() && int1->getInteger() == 1337) {
+            cout << "1337" << endl;
+        }
+        
+        // LONG
+        // Long long1 = new Long(2147483647);
+        ValuePtr long1 = new Value((Poco::Int64)2147483648LL);
+        ValuePtr long2 = new Value(2147483648LL, Value::TYPE_LONG);
+        if (long1->isLong() && long1->getLong() == 2147483648LL && long2->isLong() && long2->getLong() == 2147483648LL) {
+            cout << "2147483648" << endl;
+        }
+        
+        // DOUBLE
+        // Double double1 = new Double(3.1416);
+        ValuePtr double1 = new Value(3.1416);
+        if (double1->isDouble() && double1->getDouble() == 3.1416) {
+            cout << "3.1416" << endl;
+        }
+        
+        // DATE
+        // Date date1 = new Date();
+        Poco::Timestamp now;
+        ValuePtr date1 = new Value(now.epochTime() * 1000, Value::TYPE_DATE);
+        ValuePtr date2 = new Value(now);
+        if (date1->isDate() && date1->getDateAsTimestamp().epochTime() == now.epochTime()
+                && date2->isDate() && date2->getDateAsTimestamp().epochTime() == now.epochTime()) {
+            cout << Poco::DateTimeFormatter::format(now, "%Y-%m-%d %H:%M:%S") << endl;
+        }
+        
+        // STRING
+        // String string1 = "Encodés en UTF-8";
+        ValuePtr string1 = new Value("Encod\u00e9s en UTF-8");
+        ValuePtr string2 = new Value(std::string("Encod\u00e9s en UTF-8"));
+        ValuePtr string3 = new Value("Encod\u00e9s en UTF-8", Value::TYPE_STRING);
+        ValuePtr string4 = new Value(std::string("Encod\u00e9s en UTF-8"), Value::TYPE_STRING);
+        if (string1->isString() && string1->getString() == "Encod\u00e9s en UTF-8"
+                && string2->isString() && string2->getString() == "Encod\u00e9s en UTF-8"
+                && string3->isString() && string3->getString() == "Encod\u00e9s en UTF-8"
+                && string4->isString() && string4->getString() == "Encod\u00e9s en UTF-8") {
+            cout << "Encod\u00e9s en UTF-8" << endl;
+        }
+        
+        // XML
+        // String xml1 = "<body/>";
+        ValuePtr xml1 = new Value("<body/>", Value::TYPE_XML);
+        ValuePtr xml2 = new Value(std::string("<body/>"), Value::TYPE_XML);
+        if (xml1->isXml() && xml1->getXml() == "<body/>"
+                && xml2->isXml() && xml2->getXml() == "<body/>") {
+            cout << "<body/>" << endl;
+        }
+        
+        // BINARY
+        // byte[] binary1 = "binary".getBytes();
+        ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
+        ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
+        if (binary1->isBinary() && binary1->getBinary() == "binary"
+                && binary2->isBinary() && binary2->getBinary() == "binary") {
+            cout << "binary" << endl;
+        }
+        
     }
     
     cout << "*" << endl << "* HessianClient" << endl << "*" << endl;
