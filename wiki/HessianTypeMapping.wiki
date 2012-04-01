@@ -221,3 +221,19 @@ if (car1->isMap() && car1->getMapSize() == 3 && car1->getMapType() == "com.cauch
     cout << "Car with 3 properties, key color = " << car1->atKey("color")->getString() << endl;
 }
 }}}
+
+==REF (circular ref)==
+JAVA
+{{{
+List list2 = new ArrayList();
+list2.add(list2);
+}}}
+PoHessian
+{{{
+ValuePtr list2 = new Value(Value::TYPE_LIST);
+// special ValuePtr ctor that create a weak pointer
+list2->add(ValuePtr(list2, false));
+if (list2->isList() && list2->getListSize() == 1 && list2->getListType() == "") {
+    cout << "List of 1 object, itself, index 0 is a list = " << list2->atIndex(0)->isList() << endl;
+}
+}}}
