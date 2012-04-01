@@ -3,7 +3,7 @@
 
 <wiki:toc max_depth="2" />
 
-=Type mapping=
+=TYPE=
 
 ==NULL==
 JAVA
