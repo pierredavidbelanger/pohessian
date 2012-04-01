@@ -3,6 +3,8 @@
 
 <wiki:toc max_depth="2" />
 
+=Hessian / JAVA / PoHessian type mapping=
+
 ==NULL==
 JAVA
 {{{
