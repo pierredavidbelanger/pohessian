@@ -85,3 +85,22 @@ if (date1->isDate() && date1->getDateAsTimestamp().epochTime() == now.epochTime(
     cout << Poco::DateTimeFormatter::format(now, "%Y-%m-%d %H:%M:%S") << endl;
 }
 }}}
+
+==STRING==
+JAVA
+{{{
+String string1 = "Encodés en UTF-8";
+}}}
+PoHessian
+{{{
+ValuePtr string1 = new Value("Encod\u00e9s en UTF-8");
+ValuePtr string2 = new Value(std::string("Encod\u00e9s en UTF-8"));
+ValuePtr string3 = new Value("Encod\u00e9s en UTF-8", Value::TYPE_STRING);
+ValuePtr string4 = new Value(std::string("Encod\u00e9s en UTF-8"), Value::TYPE_STRING);
+if (string1->isString() && string1->getString() == "Encod\u00e9s en UTF-8"
+        && string2->isString() && string2->getString() == "Encod\u00e9s en UTF-8"
+        && string3->isString() && string3->getString() == "Encod\u00e9s en UTF-8"
+        && string4->isString() && string4->getString() == "Encod\u00e9s en UTF-8") {
+    cout << "Encod\u00e9s en UTF-8" << endl;
+}
+}}}
