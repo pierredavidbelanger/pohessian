@@ -1,6 +1,8 @@
 #summary Hessian / JAVA / PoHessian type mapping
 #labels Featured,Phase-Documentation
 
+<wiki:toc max_depth="1" />
+
 ==NULL==
 JAVA
 {{{
