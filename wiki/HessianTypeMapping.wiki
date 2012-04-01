@@ -1,2 +1,17 @@
 #summary Hessian / JAVA / PoHessian type mapping
 #labels Phase-Documentation
+
+==NULL==
+
+===JAVA===
+
+{{{
+Object null1 = null;
+}}}
+
+===PoHessian===
+
+{{{
+ValuePtr null1 = new Value();
+ValuePtr null2 = new Value(Value::TYPE_NULL);
+}}}
