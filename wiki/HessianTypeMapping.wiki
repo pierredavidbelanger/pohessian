@@ -11,7 +11,7 @@ PoHessian
 ValuePtr null1 = new Value();
 ValuePtr null2 = new Value(Value::TYPE_NULL);
 if (null1->isNull() && null2->isNull()) {
-    cout << "isNull" << endl;
+    cout << "null" << endl;
 }
 }}}
 
@@ -53,7 +53,7 @@ PoHessian
 ValuePtr long1 = new Value((Poco::Int64)2147483648LL);
 ValuePtr long2 = new Value(2147483648LL, Value::TYPE_LONG);
 if (long1->isLong() && long1->getLong() == 2147483648LL && long2->isLong() && long2->getLong() == 2147483648LL) {
-    cout << "2147483648 && 2147483648" << endl;
+    cout << "2147483648" << endl;
 }
 }}}
 
