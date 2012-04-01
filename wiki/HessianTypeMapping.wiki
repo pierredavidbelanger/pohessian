@@ -203,7 +203,7 @@ if (map2->isMap() && map2->getMapSize() == 2 && map2->getMapType() == "java.util
 }
 }}}
 
-==MAP (object)==
+==MAP (Object)==
 JAVA
 {{{
 Car car1 = new Car();
