@@ -185,3 +185,39 @@ if (map1->isMap() && map1->getMapSize() == 2 && map1->getMapType() == "") {
     cout << "Map of 2 object, key 1 = " << map1->atKey(1)->getString() << endl;
 }
 }}}
+
+==MAP (typed)==
+JAVA
+{{{
+Map map2 = new Hashtable();
+map2.put(1, "one");
+map2.put("foo", "bar");
+}}}
+PoHessian
+{{{
+ValuePtr map2 = new Value("java.util.Hashtable", Value::TYPE_MAP);
+map2->put(new Value(1), new Value("one"));
+map2->put(new Value("foo"), new Value("bar"));
+if (map2->isMap() && map2->getMapSize() == 2 && map2->getMapType() == "java.util.Hashtable") {
+    cout << "Hashtable of 2 object, key foo = " << map2->atKey("foo")->getString() << endl;
+}
+}}}
+
+==MAP (object)==
+JAVA
+{{{
+Car car1 = new Car();
+car1.setModel("Beetle");
+car1.setColor("aquamarine");
+car1.setMileage(65536);
+}}}
+PoHessian
+{{{
+ValuePtr car1 = new Value("com.caucho.test.Car", Value::TYPE_MAP);
+car1->put(new Value("model"), new Value("Beetle"));
+car1->put(new Value("color"), new Value("aquamarine"));
+car1->put(new Value("mileage"), new Value(65536));
+if (car1->isMap() && car1->getMapSize() == 3 && car1->getMapType() == "com.caucho.test.Car") {
+    cout << "Car with 3 properties, key color = " << car1->atKey("color")->getString() << endl;
+}
+}}}
