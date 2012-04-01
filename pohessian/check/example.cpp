@@ -121,6 +121,71 @@ int main(int argc, char* argv[]) {
             cout << "binary" << endl;
         }
         
+        // LIST (array)
+        // int[] array1 = new int[] {0, 1};
+        ValuePtr array1 = new Value("[int", Value::TYPE_LIST);
+        array1->add(new Value(0));
+        array1->add(new Value(1));
+        if (array1->isList() && array1->getListSize() == 2 && array1->getListType() == "[int") {
+            cout << "Array of 2 int, index 0 = " << array1->atIndex(0)->getInteger() << endl;
+        }
+        
+        // LIST (List)
+        // List list1 = new ArrayList();
+        // list1.add(0);
+        // list1.add("foobar");
+        ValuePtr list1 = new Value(Value::TYPE_LIST);
+        list1->add(new Value(0));
+        list1->add(new Value("foobar"));
+        if (list1->isList() && list1->getListSize() == 2 && list1->getListType() == "") {
+            cout << "List of 2 object, index 1 = " << list1->atIndex(1)->getString() << endl;
+        }
+        
+        // MAP (untyped)
+        // Map map1 = new HashMap();
+        // map1.put(1, "one");
+        // map1.put("foo", "bar");
+        ValuePtr map1 = new Value(Value::TYPE_MAP);
+        map1->put(new Value(1), new Value("one"));
+        map1->put(new Value("foo"), new Value("bar"));
+        if (map1->isMap() && map1->getMapSize() == 2 && map1->getMapType() == "") {
+            cout << "Map of 2 object, key 1 = " << map1->atKey(1)->getString() << endl;
+        }
+        
+        // MAP (typed)
+        // Map map2 = new Hashtable();
+        // map2.put(1, "one");
+        // map2.put("foo", "bar");
+        ValuePtr map2 = new Value("java.util.Hashtable", Value::TYPE_MAP);
+        map2->put(new Value(1), new Value("one"));
+        map2->put(new Value("foo"), new Value("bar"));
+        if (map2->isMap() && map2->getMapSize() == 2 && map2->getMapType() == "java.util.Hashtable") {
+            cout << "Hashtable of 2 object, key foo = " << map2->atKey("foo")->getString() << endl;
+        }
+        
+        // MAP (Object)
+        // Car car1 = new Car();
+        // car1.setModel("Beetle");
+        // car1.setColor("aquamarine");
+        // car1.setMileage(65536);
+        ValuePtr car1 = new Value("com.caucho.test.Car", Value::TYPE_MAP);
+        car1->put(new Value("model"), new Value("Beetle"));
+        car1->put(new Value("color"), new Value("aquamarine"));
+        car1->put(new Value("mileage"), new Value(65536));
+        if (car1->isMap() && car1->getMapSize() == 3 && car1->getMapType() == "com.caucho.test.Car") {
+            cout << "Car with 3 properties, key color = " << car1->atKey("color")->getString() << endl;
+        }
+        
+        // REF (circular ref)
+        // List list2 = new ArrayList();
+        // list2.add(list2);
+        ValuePtr list2 = new Value(Value::TYPE_LIST);
+        // special ValuePtr ctor that create a weak pointer
+        list2->add(ValuePtr(list2, false));
+        if (list2->isList() && list2->getListSize() == 1 && list2->getListType() == "") {
+            cout << "List of 1 object, itself, index 0 is a list = " << list2->atIndex(0)->isList() << endl;
+        }
+        
     }
     
     cout << "*" << endl << "* HessianClient" << endl << "*" << endl;
