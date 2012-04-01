@@ -185,33 +185,3 @@ if (map1->isMap() && map1->getMapSize() == 2 && map1->getMapType() == "") {
     cout << "Map of 2 object" << endl;
 }
 }}}
-
-==BINARY==
-JAVA
-{{{
-byte[] binary1 = "binary".getBytes();
-}}}
-PoHessian
-{{{
-ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
-ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
-if (binary1->isBinary() && binary1->getBinary() == "binary"
-        && binary2->isBinary() && binary2->getBinary() == "binary") {
-    cout << "binary" << endl;
-}
-}}}
-
-==BINARY==
-JAVA
-{{{
-byte[] binary1 = "binary".getBytes();
-}}}
-PoHessian
-{{{
-ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
-ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
-if (binary1->isBinary() && binary1->getBinary() == "binary"
-        && binary2->isBinary() && binary2->getBinary() == "binary") {
-    cout << "binary" << endl;
-}
-}}}
