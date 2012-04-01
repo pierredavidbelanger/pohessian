@@ -138,3 +138,80 @@ if (binary1->isBinary() && binary1->getBinary() == "binary"
     cout << "binary" << endl;
 }
 }}}
+
+==LIST (array)==
+JAVA
+{{{
+int[] array1 = new int[] {0, 1};
+}}}
+PoHessian
+{{{
+ValuePtr array1 = new Value("[int", Value::TYPE_LIST);
+array1->add(new Value(0));
+array1->add(new Value(1));
+if (array1->isList() && array1->getListSize() == 2 && array1->getListType() == "[int") {
+    cout << "Array of 2 int" << endl;
+}
+}}}
+
+==LIST (List)==
+JAVA
+{{{
+List list1 = new ArrayList();
+}}}
+PoHessian
+{{{
+ValuePtr list1 = new Value(Value::TYPE_LIST);
+list1->add(new Value(0));
+list1->add(new Value("foobar"));
+if (list1->isList() && list1->getListSize() == 2 && list1->getListType() == "") {
+    cout << "List of 2 object" << endl;
+}
+}}}
+
+==MAP (untyped)==
+JAVA
+{{{
+Map map1 = new HashMap();
+map1.put(1, "one");
+map1.put("foo", "bar");
+}}}
+PoHessian
+{{{
+ValuePtr map1 = new Value(Value::TYPE_MAP);
+map1->put(new Value(1), new Value("one"));
+map1->put(new Value("foo"), new Value("bar"));
+if (map1->isMap() && map1->getMapSize() == 2 && map1->getMapType() == "") {
+    cout << "Map of 2 object" << endl;
+}
+}}}
+
+==BINARY==
+JAVA
+{{{
+byte[] binary1 = "binary".getBytes();
+}}}
+PoHessian
+{{{
+ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
+ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
+if (binary1->isBinary() && binary1->getBinary() == "binary"
+        && binary2->isBinary() && binary2->getBinary() == "binary") {
+    cout << "binary" << endl;
+}
+}}}
+
+==BINARY==
+JAVA
+{{{
+byte[] binary1 = "binary".getBytes();
+}}}
+PoHessian
+{{{
+ValuePtr binary1 = new Value("binary", Value::TYPE_BINARY);
+ValuePtr binary2 = new Value(std::string("binary"), Value::TYPE_BINARY);
+if (binary1->isBinary() && binary1->getBinary() == "binary"
+        && binary2->isBinary() && binary2->getBinary() == "binary") {
+    cout << "binary" << endl;
+}
+}}}
