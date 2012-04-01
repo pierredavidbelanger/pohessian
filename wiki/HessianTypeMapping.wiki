@@ -104,3 +104,18 @@ if (string1->isString() && string1->getString() == "Encod\u00e9s en UTF-8"
     cout << "Encod\u00e9s en UTF-8" << endl;
 }
 }}}
+
+==XML==
+JAVA
+{{{
+String xml1 = "<body/>";
+}}}
+PoHessian
+{{{
+ValuePtr xml1 = new Value("<body/>", Value::TYPE_XML);
+ValuePtr xml2 = new Value(std::string("<body/>"), Value::TYPE_XML);
+if (xml1->isXml() && xml1->getXml() == "<body/>"
+        && xml2->isXml() && xml2->getXml() == "<body/>") {
+    cout << "<body/>" << endl;
+}
+}}}
