@@ -158,6 +158,8 @@ if (array1->isList() && array1->getListSize() == 2 && array1->getListType() == "
 JAVA
 {{{
 List list1 = new ArrayList();
+list1.add(0);
+list1.add("foobar");
 }}}
 PoHessian
 {{{
