@@ -14,17 +14,13 @@ If you need to build it from source, here is its [http://pocoproject.org/downloa
 
 ==Get the code==
 
-Download the [http://code.google.com/p/pohessian/downloads/detail?name=pohessian-1.0.tar.gz latest source package].
-
-{{{
-$ wget http://pohessian.googlecode.com/files/pohessian-1.0.tar.gz
-}}}
+Download the [http://code.google.com/p/pohessian/downloads/list latest source package].
 
 ==Unzip==
 
 {{{
-$ tar -xzf pohessian-1.0.tar.gz
-$ cd pohessian-1.0
+$ tar -xzf pohessian-x.y.tar.gz
+$ cd pohessian-x.y
 }}}
 
 ==Compile==
