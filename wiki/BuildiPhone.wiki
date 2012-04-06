@@ -1,0 +1,29 @@
+#summary Build PoHessian for iOS
+
+Follow the Poco instructions to build for iPhone and iPhoneSimulator. It should be something like this, in the Poco source directory:
+
+{{{
+$ ./configure --config=iPhone
+$ make
+$ ./configure --config=iPhoneSimulator
+$ make
+}}}
+
+Follow the GettingStarted page until you have unzipped PoHessian.
+
+Open `build-ios.sh` to adjust paths for your system:
+
+`PLATFORMS` should point to the `Developer/Platforms` directory. 
+Before Xcode 4 this directory was: `/Developer/Platforms`
+Since Xcode 4 this directory is: `/Applications/Xcode.app/Contents/Developer/Platforms`
+
+`IOS_VERSION` should be the version of the installed iOS SDK.
+As of this writing the latest iOS SDK was 5.1.
+
+`POCO` should point to the source directory of Poco (built previously).
+
+Then execute `build-ios.sh`.
+
+{{{
+$ ./build-ios.sh
+}}}
