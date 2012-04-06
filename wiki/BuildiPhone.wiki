@@ -1,4 +1,5 @@
 #summary Build PoHessian for iOS
+#labels Phase-Deploy
 
 Follow the Poco instructions to build for iPhone and iPhoneSimulator. It should be something like this, in the Poco source directory:
 
@@ -26,4 +27,14 @@ Then execute `build-ios.sh`.
 
 {{{
 $ ./build-ios.sh
+}}}
+
+It will product a FAT library that can be statically linked into iOS applications to be used into the iOS simulator (i386) and all the iOS devices (armv6 and armv7).
+
+{{{
+$ file build/ios/libpohessian.a 
+build/ios/libpohessian.a: Mach-O universal binary with 3 architectures
+build/ios/libpohessian.a (for architecture i386):       current ar archive random library
+build/ios/libpohessian.a (for architecture armv6):      current ar archive random library
+build/ios/libpohessian.a (for architecture armv7):      current ar archive random library
 }}}
