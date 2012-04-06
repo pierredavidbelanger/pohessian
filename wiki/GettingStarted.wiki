@@ -82,7 +82,7 @@ int main()
 Compile the example:
 
 {{{
-$ g++ main.cpp -lpohessian -o replyString_32
+$ g++ main.cpp -lpohessian -lPocoFoundation -o replyString_32
 }}}
 
 Execute the example:
